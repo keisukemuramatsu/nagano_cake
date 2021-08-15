@@ -1,0 +1,58 @@
+<header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/">logo</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= link_to "商品一覧", new_admin_password_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to '会員一覧', new_admin_password_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to '注文履歴一覧', new_admin_password_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+        <div class="row justify-content-left">
+           <h4 class="col-8">ジャンル一覧・追加</h4>
+        </div>
+      </div>
+    <div class="container">
+      <div class="row">
+        <%= form_with model:@newgenre, url:admin_genres_path, local:true do |f| %>
+          <div class="form-group">
+            <%= f.label :name,"ジャンル名", class: "control-label" %>
+            <%= f.text_field :name, class: "form-control book_title" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "新規登録", class: "btn btn-success" %>
+          </div>
+        <% end %>            
+      </div>
+    </div>
+   <div class="container">
+        <div class="row justify-content-left">
+           <h4 class="col-8">ジャンル</h4>
+        </div>
+      </div>
+    <div class="container">
+      <div class="row">
+        <tr>ケーキ</tr>
+        <tr>編集する</tr>            
+      </div>
+    </div>
