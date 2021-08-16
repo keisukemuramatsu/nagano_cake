@@ -1,0 +1,64 @@
+<header class="shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand p-3" href="/">logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "商品一覧", new_admin_password_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '会員一覧', new_admin_password_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '注文履歴一覧', new_admin_password_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link text-dark' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <h4 class="col py-4"><span  class="bg-light">商品一覧</span></h4>
+          <h4 class="col py-4 text-right">商品追加</h4>
+        </div>
+        <table class="table table-sm border-secondary">
+          <thead class="table-secondary">
+            <tr>
+              <th class="col-2 border-secondary">商品ID</th>
+              <th class="col-3 border-secondary">商品名</th>
+              <th class="col-2 border-secondary">税抜価格</th>
+              <th class="col-3 border-secondary">ジャンル</th>
+              <th class="col-2 border-secondary">ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>ショートケーキ</td>
+              <td>500</td>
+              <td>ジャンル１</td>
+              <td>販売中</td>
+            </tr>
+            <tr>
+            　<td>2</td>
+            　<td>モンブラン</td>
+            　<td>540</td>
+            　<td>ジャンル２</td>
+            　<td>販売休止中</td>
+            </tr>
+        　</tbody>
+        </table>
+    　</div>
+    </main>
