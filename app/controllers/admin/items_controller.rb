@@ -5,11 +5,12 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item = Item.save
-    redirect_to :admin_genres_path, notice: "追加しました."
+    @item.save
+    redirect_to admin_genres_path, notice: "追加しました."
   end
 
   def index
+    @items = Item.all
   end
 
   def show
