@@ -6,4 +6,8 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :edit, :create, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
   end
+  namespace :public, path: "" do
+    root to: "homes#top" 
+    get '/about' => 'homes#about'
+  end
 end
