@@ -14,9 +14,11 @@
  *= require_self
  */
  .jumbotron {
-     color: white;
   background-image: url("ケーキ画像①.jpg");
   background-size: cover;
   background-position: center 60%;
+}
+.lead{
+ background-color: rgba(220,220,220,0.8);
 }
 @import "bootstrap";
