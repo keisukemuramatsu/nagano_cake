@@ -13,5 +13,10 @@
  *= require_tree .
  *= require_self
  */
- 
+ .jumbotron {
+     color: white;
+  background-image: url("ケーキ画像①.jpg");
+  background-size: cover;
+  background-position: center 60%;
+}
 @import "bootstrap";
