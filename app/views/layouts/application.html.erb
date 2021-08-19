@@ -20,9 +20,20 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+            <% if customer_signed_in? %>
             <li class="nav-item">
-              <%= link_to "<顧客>About", public_about_path, class: 'nav-link text-dark' %>
+              <%= link_to "<顧客>マイページ", customer_registration_path, class: 'nav-link text-dark' %>
             </li>
+            <li class="nav-item">
+              <%= link_to "<管理者>商品一覧→顧客画面に", admin_items_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "<管理者>商品一覧→カート内", admin_items_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "<顧客>ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %>
+            </li>
+            <% elsif admin_signed_in? %>
             <li class="nav-item">
               <%= link_to "<管理者>商品一覧", admin_items_path, class: 'nav-link text-dark' %>
             </li>
@@ -38,11 +49,22 @@
             <li class="nav-item">
               <%= link_to "<管理者>ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
-             <% if customer_signed_in? %>
-            
-            <li class="nav-item">
-              <%= link_to "<顧客>ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %>
+             <% else %>
+             <li class="nav-item">
+              <%= link_to "<顧客>About", public_about_path, class: 'nav-link text-dark' %>
             </li>
+            <li class="nav-item">
+              <%= link_to "<管理者>商品一覧→顧客用に", admin_items_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規登録", new_customer_registration_path, class: 'nav-link text-dark' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン",  new_customer_session_path, class: 'nav-link text-dark' %>
+            </li>
+            
+            
+            
             <% end %>
             </ul>
           </div>

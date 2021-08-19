@@ -9,7 +9,8 @@
     </div>
     <div class="row justify-content-center">
       <table class="table table-md table-borderless">
-          <%= form_with model: @customers, url: customer_session_path, local: true do |f| %>
+          <%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
+          
           <tr class="form-group">
             <th><%= f.label :email ,"メールアドレス", class:"col-sm-8 col-form-label" %></th>
               <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %></td>
