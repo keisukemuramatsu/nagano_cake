@@ -4,7 +4,7 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  enum is_deleted: { not_menber: true, menber: false }
+  enum is_deleted: { menber: true, not_menber: false }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

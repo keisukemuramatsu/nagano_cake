@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: "homes#top" 
     get '/about' => 'homes#about'
     resource :customers, only: [:show]
-    
+    get 'customers/unsubscribe/' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/withdraw/' => 'customers#withdraw', as: 'withdraw_customer'
   end
 end
