@@ -1,13 +1,19 @@
 <main>
   <div class="container px-5 px-sm-0">
     <div class="row">
-      <h4 class="col py-4"><span  class="bg-light">マイページ</span></h4>
+      <h4 class="col py-2">
+        <span  class="bg-light">マイページ</span>
+      </h4>
     </div>
     <div class="row">
-        <tr>
-            <th>登録情報</th>
-            <td><%= link_to "編集する", edit_customer_registration_path, class: "btn btn-success" %></td>
-        </tr>
+      <div class="col-sm-2 d-flex justify-content-end align-items-center">
+            <h4>
+              <strong>登録情報</strong>
+              </h4>
+      </div>
+      <div class="col-sm-2 d-flex align-items-center">
+        <p><%= link_to "編集する", edit_customer_registration_path, class: "btn btn-success" %></p>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
@@ -37,19 +43,28 @@
               <th  class="col-3">メールアドレス</th>
               <td><%= @customer.email %></td>
             </tr>
-            <tr>
-              <th class="col-3"></th>
-              <td>
-                <div class='btn-toolbar' role="toolbar">
-                  <div>
-                    <%= link_to "編集する", public_about_path, class: "btn btn-primary" %>
-                    <%= link_to "注文履歴", public_about_path, class: "btn btn-primary" %>
-                  </div>
-                </div>
-              </td>
-            </tr>
-        　</tbody>
+          </tbody>
         </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 d-flex justify-content-end align-items-center">
+        <h4>
+          <strong>配送先</strong>
+        </h4>
+      </div>
+      <div class="col-sm-2 d-flex align-items-center">
+        <p><%= link_to "一覧を見る", public_addresses_path, class: "btn btn-primary" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 d-flex justify-content-end align-items-center">
+        <h4>
+          <strong>注文履歴</strong>
+        </h4>
+      </div>
+      <div class="col-sm-2 d-flex align-items-center">
+        <p><%= link_to "まだだよー", public_root_path, class: "btn btn-primary" %></p>
       </div>
     </div>
   </div>

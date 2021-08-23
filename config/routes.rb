@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
   end
   namespace :public, path: "" do
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
     resources :items, only: [:index, :show]
     root to: "homes#top" 
     get '/about' => 'homes#about'
