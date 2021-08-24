@@ -17,21 +17,18 @@ class Public::CartItemsController < ApplicationController
       @cart_item_total_price = cart_item_total_price(@cart_item)
     end
 
-  def update
+  def create
     if session[:cart_item].blank?
       session[:cart_item] = [{ item_id: params["item_id"], amount: params["amount"].to_i }]
-      return redirect_to carts_show_path
+      return redirect_to public_cart_items_path
     end
-    # 商品が既に入っている場合、追加する商品が重複するかで条件分岐
-    match = session[:cart].select {|cart| cart["product_id"] == params["product_id"] }
-    # 重複が発生する場合
+    match = session[:cart_item].select {|cart_item| cart_item["item_id"] == params["item_id"] }
     if match.present?
-      match[0]["quantity"] += params["quantity"].to_i
-    # 重複が発生しない場合
+      match[0]["amount"] += params["amount"].to_i
     else
-      session[:cart].push({ product_id: params["product_id"], quantity: params["quantity"].to_i })
+      session[:cart_item].push({ item_id: params["item_id"], quantity: params["amount"].to_i })
     end
-    redirect_to carts_show_path
+    redirect_to public_cart_items_path
   end
 
   # カート内商品の数量変更
