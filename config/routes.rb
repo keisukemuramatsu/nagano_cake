@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resource :customers, only: [:show]
     get 'customers/unsubscribe/' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw/' => 'customers#withdraw', as: 'withdraw_customer'
+    resources :cart_items
   end
 end

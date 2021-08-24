@@ -1,7 +1,7 @@
 <main>
-  <div class="container px-5 px-sm-0">
-    <div class="row justify-content-center">
-      <div class="col-lg-3 col-12">
+  <div class="container px-sm-0">
+    <div class="row">
+      <div class="col-lg-2 col-12">
         <table class="table table-sm table-bordered border-dark">
           <thead class="table-dark text-center">
             <tr><th class="border border-dark">ジャンル検索</th></tr>
@@ -15,57 +15,21 @@
           </tbody>
         </table>
       </div>
-    
-        <div class="col-md-3 col-12 py-3 d-flex align-items-center justify-content-center">
-        <%= attachment_image_tag @item, :image, :fill, 200, 200 %>
-        </div>
-        <div class="col-md-6 col-sm-12 py-3 px-3 d-flex align-items-center">
-        <table class="table table-sm table-borderless">
-          <tbody>
-            <tr>
-              <td><h1><%= @item.name %></h1></td>
-            </tr>
-            <tr>
-              <td><h4><%= @item.introduction %></h4></td>
-            </tr>
-            <tr>
-              <td><h3>￥<%= @item.add_tax_price.to_s(:delimited) %></h3>(税込)</td>
-            </tr>
-            <%= form_with model:@cart_item, url:admin_items_path, local:true do |f| %>
-        <table class="table table-md table-borderless">
-          <tr class="form-group">
-            <th><%= f.label :image ,"商品画像", class:"col-form-label" %></th>
-              <td><%= f.attachment_field :image, class:"align-bottom" %></td>
-          </tr>
-          <tr class="form-group">
-              <th><%= f.label :name,"商品名", class:"pt-2 col-form-label" %></th>
-              <td><%= f.text_field :name %></td>
-          </tr>
-          <tr class="form-group">
-              <th><%= f.label :introduction,"商品説明", class:"col-form-label" %></th>
-              <td><%= f.text_area :introduction %></td>
-          </tr>
-          <tr class="form-group">
-              <th><%= f.label :genre,"ジャンル", class:"col-form-label" %></th>
-              <td><%= f.collection_select :genre_id, Genre.all, :id, :name, class:"col-form-input"  %></td>
-          </tr>
-          <tr class="form-group">
-              <th><%= f.label :price,"税抜価格", class:"col-form-label" %></th>
-              <td><%= f.text_field :price, class:"col-form-input" %>円</td>
-          </tr>
-          <tr class="form-group">
-            <th><%= f.label :is_active,"販売ステータス", class:"form-check-label" %></th>
-            <td><%= f.collection_radio_buttons :is_active, Item.is_actives_i18n, :first , :last, class:"form-check-input" %></td>
-          </tr>
-            <tr class="actions text-center">
-              <th colspan="2"><%= f.submit "新規登録", class: "btn btn-success" %></th>
-            </tr>
-        <% end %><tr>
-              <td colspan="2" class="text-center"><%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %></td>
-            </tr>
-        　</tbody>
-        </table>
-        </div>
+      <div class="col-md-5 col-sm-12 text-center pt-5">
+        <%= attachment_image_tag @item, :image, :fill, 300, 200 %>
+      </div>
+      <div class="col-md-5 col-sm-12 px-3 pt-5">
+        <h1><strong><%= @item.name %></strong></h1>
+        <h5 class="h-25 py-2"><%= @item.introduction %></h5>
+        <p><font size="+3">￥<%= @item.add_tax_price.to_s(:delimited) %></font>(税込)</p>
+        <%= form_with url: public_cart_items_path, method: :post, local: true do |f| %>
+          <div class="form-row align-items-center">
+            <div class="col-6"><%= f.number_field :amount, min: 1,max: 10, placeholder:"個数選択", class:"form-control" %></div>
+            <%= hidden_field_tag :item_id, @item.id %>
+            <div class="col-6"><%= f.submit "カートに入れる", class: "btn btn-success" %></div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </main>
