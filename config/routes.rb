@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   end
   namespace :public, path: "" do
     resources :addresses, only: [:index, :edit, :create, :update, :destroy]
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show, :create]
     root to: "homes#top" 
     get '/about' => 'homes#about'
     resource :customers, only: [:show]
     get 'customers/unsubscribe/' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw/' => 'customers#withdraw', as: 'withdraw_customer'
-    resources :cart_items
+    resources :cart_items, only: [:index, :create, :update, :destroy]
+    post 'cart_items/destroy_all', to: 'cart_items#destroy_all', as: 'destroy_all_cart_items'
   end
 end

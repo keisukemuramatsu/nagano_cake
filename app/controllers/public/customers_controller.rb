@@ -5,12 +5,11 @@ class Public::CustomersController < ApplicationController
     def unsubscribe
         @customer = current_customer
     end
-
     def withdraw
-        @customer = Customer.find(current_customer.id)
-        @customer.update(is_deleted: false)
+        @customer = current_customer
+        @customer.update(is_deleted: "not_menber")
         reset_session
-        redirect_to :public_root_path
+        redirect_to public_root_path
     end
 private
     def customer_params
