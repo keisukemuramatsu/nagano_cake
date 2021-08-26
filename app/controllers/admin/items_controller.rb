@@ -6,7 +6,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to admin_items_path, notice: "追加しました."
+    redirect_to admin_item_path(@item), notice: "追加しました."
   end
 
   def index
@@ -24,7 +24,7 @@ class Admin::ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to admin_items_path, notice: "更新しました."
+    redirect_to admin_item_path(@item), notice: "更新しました."
   end
 private
     def item_params

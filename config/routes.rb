@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resource :customers, only: [:show]
     get 'customers/unsubscribe/' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw/' => 'customers#withdraw', as: 'withdraw_customer'
-    resources :cart_items, only: [:index, :create, :update, :destroy]
-    post 'cart_items/destroy_all', to: 'cart_items#destroy_all', as: 'destroy_all_cart_items'
+    resources :cart_items, only: [:index, :create, :update, :destroy] do
+      collection do
+        delete 'destroy_all'
+      end
+    end
+    # delete 'cart_items/destroy_all', to: 'cart_items#destroy_all', as: 'destroy_all_cart_items'
   end
 end

@@ -7,4 +7,7 @@ class Item < ApplicationRecord
     def add_tax_price
         (self.price * 1.1).round
     end
+    def cart_itemed_by?(item)
+      cart_items.where(item_id: item.id).exists?
+    end
 end

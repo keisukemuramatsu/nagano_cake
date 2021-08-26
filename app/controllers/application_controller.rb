@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
-      flash[:notice] = "ログインに成功しました" 
-      admin_genres_path
+      case resource
+        when Customer
+          public_customers_path
+        when Admin
+          admin_genres_path
+      end
     end
     def after_sign_out_path_for(resource)
-      flash[:notice] = "ログアウトしました" 
-      new_admin_session_path
+        new_admin_session_path
     end
     before_action :configure_permitted_parameters, if: :devise_controller?
     
