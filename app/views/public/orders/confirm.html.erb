@@ -39,15 +39,17 @@
           <table class="table table-bordered border-primary text-center">
            <tr>
             <th class="table-secondary">送料</th>
-            <td class="h5"><%= @sum.to_s(:delimited) %> 円</td>
+            <td class="h5"><%= @shipping_cost %> 円</td>
             </tr>
             <tr>
             <th class="table-secondary">商品合計</th>
             <td class="h5"><%= @sum.to_s(:delimited) %> 円</td>
             </tr>
             <tr>
+              <% @total_payment = 0 %>
+              <% @total_payment += @sum + @shipping_cost %>
             <th class="table-secondary">請求金額</th>
-            <td class="h5"><%= @sum.to_s(:delimited) %> 円</td>
+            <td class="h5"><%= @total_payment.to_s(:delimited) %> 円</td>
             </tr>
           </table>
         </div>
@@ -57,11 +59,11 @@
           <table class="table table-borderless">
            <tr>
             <th class="col-3 text-center h4">支払方法</th>
-            <td class="col-9 text-left h5"><%= @sum.to_s(:delimited) %> 円</td>
+            <td class="col-9 text-left h5"><%= @order.payment_method_i18n %></td>
             </tr>
             <tr>
             <th class="col-3 text-center h4">お届け先</th>
-            <td class="col-9 text-left h5"><%= @sum.to_s(:delimited) %> 円</td>
+            <td class="col-9 text-left h5"><%= @order.postal_code %>　<%= @order.address %><br><%= @order.name %></td>
             </tr>
           </table>
           
