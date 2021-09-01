@@ -12,6 +12,15 @@ ja:
       payment_method:
         credit_card: 'クレジットカード'
         transfer: '銀行振込'
+      status:
+        before_payment: '入金待ち'
+        paid: '入金確認'
+        preparing_delivery: '発送準備中'
+        delivered: '発送済み'
+      making_status:
+        production_pending: '製作待ち'
+        in_prodaution: '製作中'
+        production_complete: '製作完了'
   activerecord:
     errors:
       messages:

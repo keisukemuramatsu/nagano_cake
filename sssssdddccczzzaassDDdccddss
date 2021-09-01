@@ -1,0 +1,161 @@
+[33mcommit 30ba99553d9b02ec6befa736523284705b3b97b9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Wed Sep 1 04:45:05 2021 +0000
+
+    [Add]orderモデル保存
+
+[33mcommit a560e56dd25d0b381df4cf2b683a7459c641dc08[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Mon Aug 30 09:25:30 2021 +0000
+
+    [Add]住所選択機能
+
+[33mcommit 862e3e982d9225b81cc60978f1dc8c786c72d18b[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 26 13:18:39 2021 +0000
+
+    [Add]confirmページ
+
+[33mcommit fdb4556cb5005499e0dbcc592fede7bbe63d47de[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 26 07:32:23 2021 +0000
+
+    [Add]orders/view
+
+[33mcommit f9e8c19399eab7f43a8d0fd9d9e1927491ff0c51[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 26 07:30:12 2021 +0000
+
+    [Add]ordersのrouting
+
+[33mcommit 15344b6325c523baadb77a0f9309b8d51f67efc8[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 26 07:25:44 2021 +0000
+
+    [Start]注文送信
+
+[33mcommit 9c5143e708f09a1c8c2b4582a01b16587c14737e[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 26 05:53:52 2021 +0000
+
+    [Finish]カートページ
+
+[33mcommit 67d6782128e8a5564eae3eed261bc21b2db9181e[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Wed Aug 25 13:58:44 2021 +0000
+
+    [Fix]cart_item
+
+[33mcommit 9f73bdcf40d4b99f758303a36fbef5112d7c31f0[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Tue Aug 24 12:38:46 2021 +0000
+
+    [Add]cart_item
+
+[33mcommit b27087a816449333bee7ad4a1fb6bcc1c41de050[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Tue Aug 24 06:34:10 2021 +0000
+
+    [Add]商品詳細
+
+[33mcommit 59837dbace5078b2c86cc2889b7d51e2356467df[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Mon Aug 23 10:18:54 2021 +0000
+
+    [Add]配送先登録
+
+[33mcommit b0e2d467fa839d1f5429c72186c59549928abc5b[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 19 13:32:42 2021 +0000
+
+    [Add]顧客商品一覧
+
+[33mcommit fde69d007ef20f64c47c7731c3b055d6ae239065[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 19 09:11:07 2021 +0000
+
+    [Add]退会確認画面
+
+[33mcommit 371a4bfb4b7d9c107628a968c1adae3eb400f7a0[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Thu Aug 19 07:17:18 2021 +0000
+
+    [Add]会員情報編集
+
+[33mcommit 256a47f999646c5a263b4072f67884991d0d4b3d[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Wed Aug 18 14:20:44 2021 +0000
+
+    [Add]会員一覧
+
+[33mcommit ca5cdc396b592ccf4ca5bbf610bf9bf5cae93181[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Wed Aug 18 07:44:01 2021 +0000
+
+    [Add]Aboutレイアウト
+
+[33mcommit 2a13f2164e52a36008aa85a5b3e03b11d5e34ccc[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Wed Aug 18 07:25:51 2021 +0000
+
+    [Add]topレイアウト
+
+[33mcommit 6b38c353bb01edb1c70cd00cafbe7ad25ce58602[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Tue Aug 17 14:00:42 2021 +0000
+
+    [Add]publicホーム
+
+[33mcommit 2a60e66ae34ddcb3eb8dfb6bb00044381ca9b584[m
+Author: Keisukemuramatsu <harukasoranoyouni@gmail.com>
+Date:   Tue Aug 17 09:42:58 2021 +0000
+
+    [Add]item詳細画面
+
+[33mcommit 1d03594e2f6b67d9e2f8fa0fdce5a516cc9bd778[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Mon Aug 16 14:21:31 2021 +0000
+
+    [Add]商品追加
+
+[33mcommit 335467116506ed672eb33b64437ca7d264b58b82[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Mon Aug 16 11:39:07 2021 +0000
+
+    [Add]ジャンル編集
+
+[33mcommit 68e7dab2d34b5c056d25496fd36bbd408ac80c33[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Sun Aug 15 11:01:57 2021 +0000
+
+    [Add]itemcontroller
+
+[33mcommit 08007f45c1edf0f6d970ae6cc9bcfc7ea0e290ad[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Sun Aug 15 05:44:51 2021 +0000
+
+    [Add]管理者ログイン
+
+[33mcommit 30510324fc808d4c48f0c7c1d1c365b302ec1880[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Sun Aug 15 03:15:58 2021 +0000
+
+    [Add]データベース
+
+[33mcommit 846e527ceadb87d4e8b46174826829f7bacfb339[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Wed Aug 11 13:40:00 2021 +0000
+
+    [Add]AdminCustomer
+
+[33mcommit b4078ef16e1364ff4b2f4389180af72952cce03c[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Wed Aug 11 12:28:26 2021 +0000
+
+    [Add]gem(devise,refile)
+
+[33mcommit 269a519f18a9acc483a24242e4286d3ebe02d6f0[m
+Author: EC2 Default User <ec2-user@ip-172-31-79-237.ec2.internal>
+Date:   Wed Aug 11 11:17:25 2021 +0000
+
+    first commit
