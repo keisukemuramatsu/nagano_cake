@@ -3,27 +3,33 @@ class Public::OrdersController < ApplicationController
      @order = Order.new
     end
     def index
-     @order_details = OrderDetail.all
+     @orders = Order.where(customer_id: current_customer.id).order(id: "DESC")
     end
     def show
-     @order_detail = OrderDetail.find(params[:id])
+     @order = Order.find(params[:id])
+     @sum = 0
+     @order.order_details.each do |order_detail|
+         @sum += order_detail.order_detail_sub_total
+     end
     end 
     def complete
         
     end
     def create
-        @order_detail = OrderDetail.new
+        
         @order = Order.new(order_params)
         @order.customer_id = current_customer.id
         @order.save
         current_customer.cart_items.each do | cart_item |
+            @order_detail = OrderDetail.new
             @order_detail.price = cart_item.item.add_tax_price
             @order_detail.amount = cart_item.amount
             @order_detail.making_status = 0
             @order_detail.item_id = cart_item.item.id
             @order_detail.order_id = @order.id
+            @order_detail.save
         end
-        @order_detail.save
+        
         # cart_item = current_customer.cart_items
         CartItem.where(customer_id: current_customer.id).destroy_all
         redirect_to complete_public_orders_path

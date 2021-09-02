@@ -2,7 +2,7 @@
       <div class="container">
         <div class="row">
           <h4 class="col py-4"><span  class="bg-light">注文履歴一覧</span></h4>
-        <table class="table table-sm border-secondary">
+        <table class="table table-sm table-bordered">
           <thead class="table-secondary">
             <tr>
               <th class="col-2 border-secondary">注文日</th>
@@ -14,14 +14,18 @@
             </tr>
           </thead>
           <tbody>
-            <% @order_details.each do |order_detail| %>
+            <% @orders.each do |order| %>
             <tr>
-              <td><%= order_detail.order.created_at.strftime("%Y年%m月%d日") %></td>
-              <td><%= order_detail.order.address %></td>
-              <td><%= order_detail.item.name %></td>
-              <td><%= order_detail.order.total_payment %>円</td>
-              <td><%= order_detail.order.status_i18n %></td>
-              <td><%= link_to "注文履歴", public_order_path(order_detail.id), class: "btn btn-primary" %></td>
+              <td><%= order.created_at.strftime("%Y年%m月%d日") %></td>
+              <td><%= order.address %><br><%= order.name %></td>
+              <td>
+                <% order.order_details.each do |order_detail| %>
+                  <p><%= order_detail.item.name %></p>
+                <% end %>
+              </td>
+              <td><%= order.total_payment %>円</td>
+              <td><%= order.status_i18n %></td>
+              <td><%= link_to "注文履歴", public_order_path(order.id), class: "btn btn-primary" %></td>
             </tr>
             <% end %>
         　</tbody>

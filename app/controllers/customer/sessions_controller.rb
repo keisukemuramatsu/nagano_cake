@@ -18,8 +18,17 @@ class Customer::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
-
+protected
+  def reject_customer
+    @customer = Customer.find_by(name: params[:customer][:name])
+    if @customer
+      if @customer.valid_password?(params[:customer][:password]) && (@customer.is_deleted == false)
+        redirect_to new_customer_registration, notice: "退会済みです。再度ご登録をしてご利用ください。"
+      else
+        flash[:notice] = "項目を入力してください"
+      end
+    end
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])

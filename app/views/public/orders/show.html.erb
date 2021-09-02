@@ -10,23 +10,23 @@
            <tr>
             <th class="table-secondary col-4">注文日</th>
             <td>
-              <%= @order_detail.order.created_at.strftime("%Y/%m/%d") %>
+              <%= @order.created_at.strftime("%Y/%m/%d") %>
             </td>
             </tr>
             <tr>
             <th class="table-secondary">配送先</th>
-            <td><%= @order_detail.order.address %></td>
+            <td><%= @order.address %><br><%= @order.name %></td>
             </tr>
             <tr>
             <th class="table-secondary">支払方法</th>
             <td>
-              <%= @order_detail.order.payment_method_i18n %>
+              <%= @order.payment_method_i18n %>
             </td>
             </tr>
             <tr>
             <th class="table-secondary">ステータス</th>
             <td>
-              <%= @order_detail.order.status_i18n %>
+              <%= @order.status_i18n %>
             </td>
             </tr>
           </table>
@@ -37,17 +37,17 @@
            <tr>
             <th class="table-secondary">商品合計</th>
             <td>
-              
+              <%= @sum.to_s(:delimited) %>
             </td>
             </tr>
             <tr>
             <th class="table-secondary col-5">配送料</th>
-            <td><%= @order_detail.order.shipping_cost %></td>
+            <td><%= @order.shipping_cost %></td>
             </tr>
             <tr>
             <th class="table-secondary">ご請求額</th>
             <td>
-              <%= @order_detail.order.total_payment %>
+              <%= @order.total_payment.to_s(:delimited) %>
             </td>
             </tr>
           </table>
@@ -65,13 +65,14 @@
           </thead>
           
           <tbody>
+            <% @order.order_details.each do |order_detail| %>
             <tr>
-              <td><%= @order_detail.item.name %></td>
-              <td><%= @order_detail.price %></td>
-              <td><%= @order_detail.amount %></td>
-              <td><%= @order_detail.order_deteil_sub_total %>円</td>
+              <td><%= order_detail.item.name %></td>
+              <td><%= order_detail.price %></td>
+              <td><%= order_detail.amount %></td>
+              <td><%= order_detail.order_detail_sub_total %>円</td>
             </tr>
-           
+           <% end %>
         　</tbody>
         </table>
       <div class="row justify-content-center py-2">

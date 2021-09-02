@@ -23,12 +23,12 @@
             <td class="h5">
               <%= attachment_image_tag cart_item.item, :image, class:"col-4" %>
               <%= cart_item.item.name %>
-              <%= f.text_field :item_id,value: cart_item.item.id %>
+              <%= f.hidden_field :item_id,value: cart_item.item.id %>
             </td>
             <td  class="h5">
               <%= cart_item.item.add_tax_price.to_s(:delimited) %>
               <%= f.hidden_field :price, value: cart_item.item.add_tax_price %>
-            </td>
+            </td> 
             <td  class="h5">
               <%= cart_item.amount %>
               <%= f.hidden_field :amount,value: cart_item.amount %>
