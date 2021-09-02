@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
         when Customer
           public_customers_path
         when Admin
-          admin_genres_path
+          admin_root_path
       end
     end
     def after_sign_out_path_for(resource)
